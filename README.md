@@ -117,4 +117,64 @@ Private project - All rights reserved.
 Built with assistance from DeepSeek AI
 
 Inspired by family history preservation needs
-EOF
+
+## 📋 Development Progress
+
+### Phase 1: Foundation
+- [x] **T1.1**: Project Initialization
+  - ✅ Repository setup
+  - ✅ Basic structure
+  - ✅ Initial documentation
+  - ⏳ Pending: Docker setup, Config files
+
+### 📍 Current Status
+**Sprint 1**: Setup & Authentication (In Progress)
+**Next Task**: T1.2 - Backend Core Setup
+
+## 🛠️ Development Setup
+
+### Prerequisites
+- Docker & Docker Compose
+- Node.js 18+
+- Python 3.11+
+
+### Quick Start
+```bash
+# Clone repository
+git clone https://github.com/johnleefeb0825-arch/family-network-app.git
+cd family-network-app
+
+# Start development environment
+docker-compose up -d
+
+# Install backend dependencies
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Install frontend dependencies
+cd ../frontend
+npm install
+
+
+### **BƯỚC 3: COMMIT VÀ PUSH CẢI THIỆN**
+
+```bash
+# Thêm tất cả file mới
+git add .
+
+# Kiểm tra trạng thái
+git status
+
+# Commit
+git commit -m "feat: T1.1 completion - add missing config files
+
+- Added comprehensive .gitignore
+- Added docker-compose.yml for development
+- Created proper folder structure
+- Added VSCode configuration
+- Updated README with development progress"
+
+# Push lên GitHub
+git push origin main
