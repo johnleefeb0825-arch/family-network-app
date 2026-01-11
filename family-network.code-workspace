@@ -1,13 +1,65 @@
 {
   "folders": [
     {
-      "path": "."
+      "name": "Frontend",
+      "path": "./frontend"
+    },
+    {
+      "name": "Backend", 
+      "path": "./backend"
+    },
+    {
+      "name": "Docker & DevOps",
+      "path": "./docker"
+    },
+    {
+      "name": "Documentation",
+      "path": "./docs"
+    },
+    {
+      "name": "Tests",
+      "path": "./tests"
     }
   ],
   "settings": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    },
+    "editor.tabSize": 2,
+    "files.autoSave": "afterDelay",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "[python]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-vscode.vscode-typescript-next",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+      "github.copilot",
+      "github.copilot-chat",
+      "eamodio.gitlens",
+      "ms-azuretools.vscode-docker",
+      "graphql.vscode-graphql",
+      "postman.postman-for-vscode"
+    ]
   }
 }
