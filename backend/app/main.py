@@ -4,7 +4,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from app.core.config import settings
-from app.core.database import get_db
+from app.core.database import get_db, create_tables
+from app.routers import auth
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -20,6 +21,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(auth.router, prefix=settings.API_V1_STR)
+
+@app.on_event("startup")
+def on_startup():
+    # Create tables if they don't exist
+    create_tables()
 
 @app.get("/")
 def read_root():
@@ -37,7 +46,3 @@ def database_health_check(db: Session = Depends(get_db)):
         return {"status": "healthy", "database": "connected"}
     except Exception as e:
         return {"status": "unhealthy", "database": "disconnected", "error": str(e)}
-
-# Import routers (sẽ thêm sau)
-# from app.api.v1.api import api_router
-# app.include_router(api_router, prefix=settings.API_V1_STR)

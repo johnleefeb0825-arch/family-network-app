@@ -6,13 +6,15 @@ from app.core.config import settings
 engine = create_engine(
     settings.DATABASE_URL,
     pool_pre_ping=True,
-    echo=False  # Đổi thành True để debug SQL queries
+    echo=False  # Set to True to see SQL queries
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# Dependency
+def create_tables():
+    Base.metadata.create_all(bind=engine)
+
 def get_db():
     db = SessionLocal()
     try:
